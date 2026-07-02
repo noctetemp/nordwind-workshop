@@ -9,8 +9,8 @@ morale, entirely by anime characters).
 
 | # | Session | Notebook |
 |---|---------|----------|
-| 1 | **RAG Foundations** — tokens, context windows, naive RAG, and the question that breaks it | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session1_rag_foundations_en.ipynb) |
-| 2 | **Embeddings & Vector Databases** — the geometry of meaning | _coming soon_ |
+| 1 | **RAG Foundations** — tokens, context windows, naive RAG, and the question that breaks it | [![EN](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session1_rag_foundations_en.ipynb) [🇯🇵 日本語版](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session1_rag_foundations_ja.ipynb) |
+| 2 | **Embeddings & Vector Databases** — the geometry of meaning | [![EN](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session2_vectors_en.ipynb) |
 | 3 | **Graph Databases** — Cypher, Neo4j, and seeing your knowledge as a network | _coming soon_ |
 | 4 | **GraphRAG** — vectors + graphs, full circle | _coming soon_ |
 
