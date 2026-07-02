@@ -1,0 +1,767 @@
+[
+  {
+    "type": "MEMBER_OF",
+    "from": "Motoko Kusanagi",
+    "to": "Grid Operations"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Spike Spiegel",
+    "to": "Grid Operations"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Edward Elric",
+    "to": "Grid Operations"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Levi Ackerman",
+    "to": "Grid Operations"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Nami",
+    "to": "Customer Platform"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Usopp",
+    "to": "Customer Platform"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Asuka Langley",
+    "to": "Customer Platform"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Tanjiro Kamado",
+    "to": "Customer Platform"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Nico Robin",
+    "to": "Payments & Billing"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Light Yagami",
+    "to": "Payments & Billing"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Mikasa Ackerman",
+    "to": "Payments & Billing"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Roronoa Zoro",
+    "to": "Payments & Billing"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Olivier Armstrong",
+    "to": "Data Platform"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "L Lawliet",
+    "to": "Data Platform"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Bulma",
+    "to": "Data Platform"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Shikamaru Nara",
+    "to": "Data Platform"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Misato Katsuragi",
+    "to": "Core Infrastructure"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Kakashi Hatake",
+    "to": "Core Infrastructure"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Franky",
+    "to": "Core Infrastructure"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Yor Forger",
+    "to": "Core Infrastructure"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Senku Ishigami",
+    "to": "Forecasting & AI"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Frieren",
+    "to": "Forecasting & AI"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Kurisu Makise",
+    "to": "Forecasting & AI"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Winry Rockbell",
+    "to": "Field Systems"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Shinji Ikari",
+    "to": "Field Systems"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Loid Forger",
+    "to": "Field Systems"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Erza Scarlet",
+    "to": "Security & Identity"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Killua Zoldyck",
+    "to": "Security & Identity"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Hinata Hyuga",
+    "to": "Security & Identity"
+  },
+  {
+    "type": "MEMBER_OF",
+    "from": "Lelouch Lamperouge",
+    "to": "Security & Identity"
+  },
+  {
+    "type": "OWNS",
+    "from": "Grid Operations",
+    "to": "telemetry-ingest"
+  },
+  {
+    "type": "OWNS",
+    "from": "Grid Operations",
+    "to": "grid-monitor"
+  },
+  {
+    "type": "OWNS",
+    "from": "Grid Operations",
+    "to": "dispatch-optimizer"
+  },
+  {
+    "type": "OWNS",
+    "from": "Customer Platform",
+    "to": "customer-portal"
+  },
+  {
+    "type": "OWNS",
+    "from": "Customer Platform",
+    "to": "mobile-api"
+  },
+  {
+    "type": "OWNS",
+    "from": "Customer Platform",
+    "to": "outage-notifier"
+  },
+  {
+    "type": "OWNS",
+    "from": "Payments & Billing",
+    "to": "payment-gateway"
+  },
+  {
+    "type": "OWNS",
+    "from": "Payments & Billing",
+    "to": "billing-engine"
+  },
+  {
+    "type": "OWNS",
+    "from": "Payments & Billing",
+    "to": "tariff-service"
+  },
+  {
+    "type": "OWNS",
+    "from": "Data Platform",
+    "to": "data-lake-sync"
+  },
+  {
+    "type": "OWNS",
+    "from": "Data Platform",
+    "to": "reporting-service"
+  },
+  {
+    "type": "OWNS",
+    "from": "Forecasting & AI",
+    "to": "forecast-service"
+  },
+  {
+    "type": "OWNS",
+    "from": "Field Systems",
+    "to": "meter-reader"
+  },
+  {
+    "type": "OWNS",
+    "from": "Security & Identity",
+    "to": "auth-service"
+  },
+  {
+    "type": "OWNS",
+    "from": "Core Infrastructure",
+    "to": "api-gateway"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "grid-monitor",
+    "to": "telemetry-ingest"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "dispatch-optimizer",
+    "to": "grid-monitor"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "dispatch-optimizer",
+    "to": "forecast-service"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "customer-portal",
+    "to": "mobile-api"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "customer-portal",
+    "to": "billing-engine"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "customer-portal",
+    "to": "auth-service"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "mobile-api",
+    "to": "auth-service"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "mobile-api",
+    "to": "billing-engine"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "outage-notifier",
+    "to": "grid-monitor"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "outage-notifier",
+    "to": "customer-portal"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "billing-engine",
+    "to": "payment-gateway"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "billing-engine",
+    "to": "tariff-service"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "billing-engine",
+    "to": "meter-reader"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "reporting-service",
+    "to": "data-lake-sync"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "reporting-service",
+    "to": "billing-engine"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "data-lake-sync",
+    "to": "telemetry-ingest"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "data-lake-sync",
+    "to": "meter-reader"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "forecast-service",
+    "to": "data-lake-sync"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "api-gateway",
+    "to": "auth-service"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "customer-portal",
+    "to": "api-gateway"
+  },
+  {
+    "type": "DEPENDS_ON",
+    "from": "payment-gateway",
+    "to": "auth-service"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2101",
+    "to": "billing-engine"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2102",
+    "to": "payment-gateway"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2102",
+    "to": "billing-engine"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2103",
+    "to": "customer-portal"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2103",
+    "to": "auth-service"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2104",
+    "to": "telemetry-ingest"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2104",
+    "to": "grid-monitor"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2105",
+    "to": "meter-reader"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2105",
+    "to": "billing-engine"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2106",
+    "to": "forecast-service"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2107",
+    "to": "api-gateway"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2108",
+    "to": "outage-notifier"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2108",
+    "to": "customer-portal"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2109",
+    "to": "data-lake-sync"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2109",
+    "to": "meter-reader"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2110",
+    "to": "tariff-service"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2110",
+    "to": "billing-engine"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2111",
+    "to": "auth-service"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2111",
+    "to": "api-gateway"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2111",
+    "to": "mobile-api"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2112",
+    "to": "grid-monitor"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2113",
+    "to": "payment-gateway"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2114",
+    "to": "mobile-api"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2114",
+    "to": "data-lake-sync"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2115",
+    "to": "dispatch-optimizer"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2115",
+    "to": "forecast-service"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2116",
+    "to": "reporting-service"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2116",
+    "to": "billing-engine"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2117",
+    "to": "customer-portal"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2117",
+    "to": "payment-gateway"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2118",
+    "to": "meter-reader"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2118",
+    "to": "telemetry-ingest"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2119",
+    "to": "outage-notifier"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2120",
+    "to": "billing-engine"
+  },
+  {
+    "type": "AFFECTED",
+    "from": "INC-2120",
+    "to": "reporting-service"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Nico Robin",
+    "to": "INC-2101"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Light Yagami",
+    "to": "INC-2101"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Olivier Armstrong",
+    "to": "INC-2101"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Roronoa Zoro",
+    "to": "INC-2102"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Nico Robin",
+    "to": "INC-2102"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Misato Katsuragi",
+    "to": "INC-2102"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Nami",
+    "to": "INC-2103"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Hinata Hyuga",
+    "to": "INC-2103"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Kakashi Hatake",
+    "to": "INC-2103"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Motoko Kusanagi",
+    "to": "INC-2104"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Spike Spiegel",
+    "to": "INC-2104"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Winry Rockbell",
+    "to": "INC-2105"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Shinji Ikari",
+    "to": "INC-2105"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Mikasa Ackerman",
+    "to": "INC-2105"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Senku Ishigami",
+    "to": "INC-2106"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Frieren",
+    "to": "INC-2106"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Franky",
+    "to": "INC-2107"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Yor Forger",
+    "to": "INC-2107"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Usopp",
+    "to": "INC-2108"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Tanjiro Kamado",
+    "to": "INC-2108"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Nami",
+    "to": "INC-2108"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "L Lawliet",
+    "to": "INC-2109"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Bulma",
+    "to": "INC-2109"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Loid Forger",
+    "to": "INC-2109"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Mikasa Ackerman",
+    "to": "INC-2110"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Light Yagami",
+    "to": "INC-2110"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Erza Scarlet",
+    "to": "INC-2111"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Hinata Hyuga",
+    "to": "INC-2111"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Misato Katsuragi",
+    "to": "INC-2111"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Franky",
+    "to": "INC-2111"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Spike Spiegel",
+    "to": "INC-2112"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Edward Elric",
+    "to": "INC-2112"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Roronoa Zoro",
+    "to": "INC-2113"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Lelouch Lamperouge",
+    "to": "INC-2113"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Asuka Langley",
+    "to": "INC-2114"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Shikamaru Nara",
+    "to": "INC-2114"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Levi Ackerman",
+    "to": "INC-2115"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Kurisu Makise",
+    "to": "INC-2115"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Frieren",
+    "to": "INC-2115"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Bulma",
+    "to": "INC-2116"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Olivier Armstrong",
+    "to": "INC-2116"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Nico Robin",
+    "to": "INC-2116"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Tanjiro Kamado",
+    "to": "INC-2117"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Roronoa Zoro",
+    "to": "INC-2117"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Winry Rockbell",
+    "to": "INC-2118"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Yor Forger",
+    "to": "INC-2118"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Loid Forger",
+    "to": "INC-2118"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Usopp",
+    "to": "INC-2119"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Asuka Langley",
+    "to": "INC-2119"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Light Yagami",
+    "to": "INC-2120"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Olivier Armstrong",
+    "to": "INC-2120"
+  },
+  {
+    "type": "RESPONDED_TO",
+    "from": "Kakashi Hatake",
+    "to": "INC-2120"
+  }
+]

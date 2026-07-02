@@ -1,0 +1,82 @@
+{
+  "key_multihop_question": {
+    "question": "Which engineers have responded to incidents affecting services that depend on payment-gateway?",
+    "services_depending_on_payment_gateway": [
+      "billing-engine"
+    ],
+    "qualifying_incidents": [
+      "INC-2101",
+      "INC-2102",
+      "INC-2105",
+      "INC-2110",
+      "INC-2116",
+      "INC-2120"
+    ],
+    "answer_engineers": [
+      "Bulma",
+      "Kakashi Hatake",
+      "Light Yagami",
+      "Mikasa Ackerman",
+      "Misato Katsuragi",
+      "Nico Robin",
+      "Olivier Armstrong",
+      "Roronoa Zoro",
+      "Shinji Ikari",
+      "Winry Rockbell"
+    ],
+    "why_vector_rag_fails": "The dependency edge (billing-engine -> payment-gateway) lives in ADR-002/OV-003, while responder lists live in separate postmortems. Answering requires joining across documents and aggregating \u2014 semantic similarity retrieves fragments, not the join."
+  },
+  "supporting_questions": {
+    "most_incident_prone_service": [
+      "billing-engine",
+      6
+    ],
+    "engineer_incident_counts": {
+      "Motoko Kusanagi": 1,
+      "Spike Spiegel": 2,
+      "Edward Elric": 1,
+      "Levi Ackerman": 1,
+      "Nami": 2,
+      "Usopp": 2,
+      "Asuka Langley": 2,
+      "Tanjiro Kamado": 2,
+      "Nico Robin": 3,
+      "Light Yagami": 3,
+      "Mikasa Ackerman": 2,
+      "Roronoa Zoro": 3,
+      "Olivier Armstrong": 3,
+      "L Lawliet": 1,
+      "Bulma": 2,
+      "Shikamaru Nara": 1,
+      "Misato Katsuragi": 2,
+      "Kakashi Hatake": 2,
+      "Franky": 2,
+      "Yor Forger": 2,
+      "Senku Ishigami": 1,
+      "Frieren": 2,
+      "Kurisu Makise": 1,
+      "Winry Rockbell": 2,
+      "Shinji Ikari": 1,
+      "Loid Forger": 2,
+      "Erza Scarlet": 1,
+      "Killua Zoldyck": 0,
+      "Hinata Hyuga": 2,
+      "Lelouch Lamperouge": 1
+    },
+    "cross_team_responder_incidents": [
+      "INC-2101",
+      "INC-2102",
+      "INC-2103",
+      "INC-2105",
+      "INC-2109",
+      "INC-2111",
+      "INC-2113",
+      "INC-2114",
+      "INC-2115",
+      "INC-2116",
+      "INC-2117",
+      "INC-2118",
+      "INC-2120"
+    ]
+  }
+}

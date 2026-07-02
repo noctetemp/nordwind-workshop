@@ -1,0 +1,20 @@
+{
+  "world": "NordWind Energy (fictional)",
+  "seed": 42,
+  "counts": {
+    "teams": 8,
+    "engineers": 30,
+    "services": 15,
+    "incidents": 20,
+    "documents": 65,
+    "relationships": 153,
+    "docs_by_type": {
+      "postmortem": 20,
+      "adr": 10,
+      "runbook": 15,
+      "slack_thread": 12,
+      "overview": 8
+    }
+  },
+  "checksum": "9d4eb12de6e731df3ee4d050df931922"
+}

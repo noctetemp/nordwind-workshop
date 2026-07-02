@@ -1,0 +1,107 @@
+[
+  {
+    "name": "telemetry-ingest",
+    "owner_team_id": "T1",
+    "owner_team": "Grid Operations",
+    "description": "ingests real-time sensor data from grid substations",
+    "language": "Go"
+  },
+  {
+    "name": "grid-monitor",
+    "owner_team_id": "T1",
+    "owner_team": "Grid Operations",
+    "description": "real-time monitoring and alerting for grid health",
+    "language": "Go"
+  },
+  {
+    "name": "dispatch-optimizer",
+    "owner_team_id": "T1",
+    "owner_team": "Grid Operations",
+    "description": "optimizes power dispatch across generation assets",
+    "language": "Python"
+  },
+  {
+    "name": "customer-portal",
+    "owner_team_id": "T2",
+    "owner_team": "Customer Platform",
+    "description": "customer-facing web application for accounts and usage",
+    "language": "TypeScript"
+  },
+  {
+    "name": "mobile-api",
+    "owner_team_id": "T2",
+    "owner_team": "Customer Platform",
+    "description": "backend-for-frontend serving the mobile apps",
+    "language": "TypeScript"
+  },
+  {
+    "name": "outage-notifier",
+    "owner_team_id": "T2",
+    "owner_team": "Customer Platform",
+    "description": "sends outage notifications via email, SMS and push",
+    "language": "Python"
+  },
+  {
+    "name": "payment-gateway",
+    "owner_team_id": "T3",
+    "owner_team": "Payments & Billing",
+    "description": "processes card and bank payments with external PSPs",
+    "language": "Java"
+  },
+  {
+    "name": "billing-engine",
+    "owner_team_id": "T3",
+    "owner_team": "Payments & Billing",
+    "description": "computes invoices from usage data and tariff plans",
+    "language": "Java"
+  },
+  {
+    "name": "tariff-service",
+    "owner_team_id": "T3",
+    "owner_team": "Payments & Billing",
+    "description": "manages tariff plans and pricing rules",
+    "language": "Java"
+  },
+  {
+    "name": "data-lake-sync",
+    "owner_team_id": "T4",
+    "owner_team": "Data Platform",
+    "description": "syncs operational data into the analytics lake",
+    "language": "Python"
+  },
+  {
+    "name": "reporting-service",
+    "owner_team_id": "T4",
+    "owner_team": "Data Platform",
+    "description": "generates regulatory and internal reports",
+    "language": "Python"
+  },
+  {
+    "name": "forecast-service",
+    "owner_team_id": "T6",
+    "owner_team": "Forecasting & AI",
+    "description": "predicts energy demand using ML models",
+    "language": "Python"
+  },
+  {
+    "name": "meter-reader",
+    "owner_team_id": "T7",
+    "owner_team": "Field Systems",
+    "description": "collects readings from smart meters in the field",
+    "language": "Go"
+  },
+  {
+    "name": "auth-service",
+    "owner_team_id": "T8",
+    "owner_team": "Security & Identity",
+    "description": "authentication and token issuance for all platforms",
+    "language": "Go"
+  },
+  {
+    "name": "api-gateway",
+    "owner_team_id": "T5",
+    "owner_team": "Core Infrastructure",
+    "description": "edge routing, rate limiting and TLS termination",
+    "language": "Go"
+  }
+]

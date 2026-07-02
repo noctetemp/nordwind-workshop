@@ -1,0 +1,42 @@
+[
+  {
+    "id": "T1",
+    "name": "Grid Operations",
+    "focus": "real-time grid telemetry and control"
+  },
+  {
+    "id": "T2",
+    "name": "Customer Platform",
+    "focus": "customer-facing web and mobile experiences"
+  },
+  {
+    "id": "T3",
+    "name": "Payments & Billing",
+    "focus": "payment processing, invoicing, tariffs"
+  },
+  {
+    "id": "T4",
+    "name": "Data Platform",
+    "focus": "data lake, pipelines, analytics"
+  },
+  {
+    "id": "T5",
+    "name": "Core Infrastructure",
+    "focus": "Kubernetes, networking, observability"
+  },
+  {
+    "id": "T6",
+    "name": "Forecasting & AI",
+    "focus": "demand forecasting and ML services"
+  },
+  {
+    "id": "T7",
+    "name": "Field Systems",
+    "focus": "smart meters and field-device integration"
+  },
+  {
+    "id": "T8",
+    "name": "Security & Identity",
+    "focus": "authentication, authorization, compliance"
+  }
+]

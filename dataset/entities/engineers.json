@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Motoko Kusanagi",
+    "team_id": "T1",
+    "role": "Staff Engineer",
+    "team_name": "Grid Operations"
+  },
+  {
+    "name": "Spike Spiegel",
+    "team_id": "T1",
+    "role": "Senior Engineer",
+    "team_name": "Grid Operations"
+  },
+  {
+    "name": "Edward Elric",
+    "team_id": "T1",
+    "role": "Engineer",
+    "team_name": "Grid Operations"
+  },
+  {
+    "name": "Levi Ackerman",
+    "team_id": "T1",
+    "role": "SRE",
+    "team_name": "Grid Operations"
+  },
+  {
+    "name": "Nami",
+    "team_id": "T2",
+    "role": "Tech Lead",
+    "team_name": "Customer Platform"
+  },
+  {
+    "name": "Usopp",
+    "team_id": "T2",
+    "role": "Senior Engineer",
+    "team_name": "Customer Platform"
+  },
+  {
+    "name": "Asuka Langley",
+    "team_id": "T2",
+    "role": "Frontend Engineer",
+    "team_name": "Customer Platform"
+  },
+  {
+    "name": "Tanjiro Kamado",
+    "team_id": "T2",
+    "role": "Engineer",
+    "team_name": "Customer Platform"
+  },
+  {
+    "name": "Nico Robin",
+    "team_id": "T3",
+    "role": "Tech Lead",
+    "team_name": "Payments & Billing"
+  },
+  {
+    "name": "Light Yagami",
+    "team_id": "T3",
+    "role": "Senior Engineer",
+    "team_name": "Payments & Billing"
+  },
+  {
+    "name": "Mikasa Ackerman",
+    "team_id": "T3",
+    "role": "Engineer",
+    "team_name": "Payments & Billing"
+  },
+  {
+    "name": "Roronoa Zoro",
+    "team_id": "T3",
+    "role": "Payments Specialist",
+    "team_name": "Payments & Billing"
+  },
+  {
+    "name": "Olivier Armstrong",
+    "team_id": "T4",
+    "role": "Staff Engineer",
+    "team_name": "Data Platform"
+  },
+  {
+    "name": "L Lawliet",
+    "team_id": "T4",
+    "role": "Data Engineer",
+    "team_name": "Data Platform"
+  },
+  {
+    "name": "Bulma",
+    "team_id": "T4",
+    "role": "Senior Engineer",
+    "team_name": "Data Platform"
+  },
+  {
+    "name": "Shikamaru Nara",
+    "team_id": "T4",
+    "role": "Engineer",
+    "team_name": "Data Platform"
+  },
+  {
+    "name": "Misato Katsuragi",
+    "team_id": "T5",
+    "role": "Principal SRE",
+    "team_name": "Core Infrastructure"
+  },
+  {
+    "name": "Kakashi Hatake",
+    "team_id": "T5",
+    "role": "SRE",
+    "team_name": "Core Infrastructure"
+  },
+  {
+    "name": "Franky",
+    "team_id": "T5",
+    "role": "Platform Engineer",
+    "team_name": "Core Infrastructure"
+  },
+  {
+    "name": "Yor Forger",
+    "team_id": "T5",
+    "role": "Network Engineer",
+    "team_name": "Core Infrastructure"
+  },
+  {
+    "name": "Senku Ishigami",
+    "team_id": "T6",
+    "role": "ML Engineer",
+    "team_name": "Forecasting & AI"
+  },
+  {
+    "name": "Frieren",
+    "team_id": "T6",
+    "role": "Senior ML Engineer",
+    "team_name": "Forecasting & AI"
+  },
+  {
+    "name": "Kurisu Makise",
+    "team_id": "T6",
+    "role": "Data Scientist",
+    "team_name": "Forecasting & AI"
+  },
+  {
+    "name": "Winry Rockbell",
+    "team_id": "T7",
+    "role": "Tech Lead",
+    "team_name": "Field Systems"
+  },
+  {
+    "name": "Shinji Ikari",
+    "team_id": "T7",
+    "role": "Embedded Engineer",
+    "team_name": "Field Systems"
+  },
+  {
+    "name": "Loid Forger",
+    "team_id": "T7",
+    "role": "Engineer",
+    "team_name": "Field Systems"
+  },
+  {
+    "name": "Erza Scarlet",
+    "team_id": "T8",
+    "role": "Security Lead",
+    "team_name": "Security & Identity"
+  },
+  {
+    "name": "Killua Zoldyck",
+    "team_id": "T8",
+    "role": "Security Engineer",
+    "team_name": "Security & Identity"
+  },
+  {
+    "name": "Hinata Hyuga",
+    "team_id": "T8",
+    "role": "IAM Engineer",
+    "team_name": "Security & Identity"
+  },
+  {
+    "name": "Lelouch Lamperouge",
+    "team_id": "T8",
+    "role": "Compliance Engineer",
+    "team_name": "Security & Identity"
+  }
+]

@@ -1,0 +1,309 @@
+[
+  {
+    "id": "INC-2101",
+    "title": "Billing run produced duplicate invoices",
+    "severity": "SEV2",
+    "affected_services": [
+      "billing-engine"
+    ],
+    "responders": [
+      "Nico Robin",
+      "Light Yagami",
+      "Olivier Armstrong"
+    ],
+    "root_cause_key": "idempotency",
+    "date": "2025-07-16"
+  },
+  {
+    "id": "INC-2102",
+    "title": "Payment gateway timeout spike during evening peak",
+    "severity": "SEV1",
+    "affected_services": [
+      "payment-gateway",
+      "billing-engine"
+    ],
+    "responders": [
+      "Roronoa Zoro",
+      "Nico Robin",
+      "Misato Katsuragi"
+    ],
+    "root_cause_key": "connection_pool",
+    "date": "2025-08-05"
+  },
+  {
+    "id": "INC-2103",
+    "title": "Customer portal login failures after auth deploy",
+    "severity": "SEV1",
+    "affected_services": [
+      "customer-portal",
+      "auth-service"
+    ],
+    "responders": [
+      "Nami",
+      "Hinata Hyuga",
+      "Kakashi Hatake"
+    ],
+    "root_cause_key": "jwt_rotation",
+    "date": "2025-08-20"
+  },
+  {
+    "id": "INC-2104",
+    "title": "Telemetry ingest lag exceeding 15 minutes",
+    "severity": "SEV2",
+    "affected_services": [
+      "telemetry-ingest",
+      "grid-monitor"
+    ],
+    "responders": [
+      "Motoko Kusanagi",
+      "Spike Spiegel"
+    ],
+    "root_cause_key": "kafka_partitions",
+    "date": "2025-09-04"
+  },
+  {
+    "id": "INC-2105",
+    "title": "Smart meter readings missing for region North",
+    "severity": "SEV2",
+    "affected_services": [
+      "meter-reader",
+      "billing-engine"
+    ],
+    "responders": [
+      "Winry Rockbell",
+      "Shinji Ikari",
+      "Mikasa Ackerman"
+    ],
+    "root_cause_key": "firmware",
+    "date": "2025-09-19"
+  },
+  {
+    "id": "INC-2106",
+    "title": "Forecast service producing negative demand values",
+    "severity": "SEV3",
+    "affected_services": [
+      "forecast-service"
+    ],
+    "responders": [
+      "Senku Ishigami",
+      "Frieren"
+    ],
+    "root_cause_key": "training_data",
+    "date": "2025-10-04"
+  },
+  {
+    "id": "INC-2107",
+    "title": "API gateway 502 errors under load test",
+    "severity": "SEV3",
+    "affected_services": [
+      "api-gateway"
+    ],
+    "responders": [
+      "Franky",
+      "Yor Forger"
+    ],
+    "root_cause_key": "keepalive",
+    "date": "2025-10-14"
+  },
+  {
+    "id": "INC-2108",
+    "title": "Outage notifications sent to wrong customers",
+    "severity": "SEV1",
+    "affected_services": [
+      "outage-notifier",
+      "customer-portal"
+    ],
+    "responders": [
+      "Usopp",
+      "Tanjiro Kamado",
+      "Nami"
+    ],
+    "root_cause_key": "cache_key",
+    "date": "2025-10-29"
+  },
+  {
+    "id": "INC-2109",
+    "title": "Data lake sync silently dropping meter events",
+    "severity": "SEV2",
+    "affected_services": [
+      "data-lake-sync",
+      "meter-reader"
+    ],
+    "responders": [
+      "L Lawliet",
+      "Bulma",
+      "Loid Forger"
+    ],
+    "root_cause_key": "schema_drift",
+    "date": "2025-11-13"
+  },
+  {
+    "id": "INC-2110",
+    "title": "Tariff update applied retroactively to closed invoices",
+    "severity": "SEV2",
+    "affected_services": [
+      "tariff-service",
+      "billing-engine"
+    ],
+    "responders": [
+      "Mikasa Ackerman",
+      "Light Yagami"
+    ],
+    "root_cause_key": "effective_date",
+    "date": "2025-11-28"
+  },
+  {
+    "id": "INC-2111",
+    "title": "Auth token validation latency degrading all platforms",
+    "severity": "SEV1",
+    "affected_services": [
+      "auth-service",
+      "api-gateway",
+      "mobile-api"
+    ],
+    "responders": [
+      "Erza Scarlet",
+      "Hinata Hyuga",
+      "Misato Katsuragi",
+      "Franky"
+    ],
+    "root_cause_key": "cert_chain",
+    "date": "2025-12-13"
+  },
+  {
+    "id": "INC-2112",
+    "title": "Grid monitor false alarms flooding on-call",
+    "severity": "SEV3",
+    "affected_services": [
+      "grid-monitor"
+    ],
+    "responders": [
+      "Spike Spiegel",
+      "Edward Elric"
+    ],
+    "root_cause_key": "threshold",
+    "date": "2025-12-23"
+  },
+  {
+    "id": "INC-2113",
+    "title": "Payment settlement file rejected by bank",
+    "severity": "SEV2",
+    "affected_services": [
+      "payment-gateway"
+    ],
+    "responders": [
+      "Roronoa Zoro",
+      "Lelouch Lamperouge"
+    ],
+    "root_cause_key": "file_format",
+    "date": "2026-01-02"
+  },
+  {
+    "id": "INC-2114",
+    "title": "Mobile app showing stale usage data",
+    "severity": "SEV3",
+    "affected_services": [
+      "mobile-api",
+      "data-lake-sync"
+    ],
+    "responders": [
+      "Asuka Langley",
+      "Shikamaru Nara"
+    ],
+    "root_cause_key": "cache_ttl",
+    "date": "2026-01-12"
+  },
+  {
+    "id": "INC-2115",
+    "title": "Dispatch optimizer using outdated forecasts",
+    "severity": "SEV2",
+    "affected_services": [
+      "dispatch-optimizer",
+      "forecast-service"
+    ],
+    "responders": [
+      "Levi Ackerman",
+      "Kurisu Makise",
+      "Frieren"
+    ],
+    "root_cause_key": "pipeline_ordering",
+    "date": "2026-01-27"
+  },
+  {
+    "id": "INC-2116",
+    "title": "Reporting service regulatory export failed month-end",
+    "severity": "SEV2",
+    "affected_services": [
+      "reporting-service",
+      "billing-engine"
+    ],
+    "responders": [
+      "Bulma",
+      "Olivier Armstrong",
+      "Nico Robin"
+    ],
+    "root_cause_key": "timeout",
+    "date": "2026-02-11"
+  },
+  {
+    "id": "INC-2117",
+    "title": "Customer portal checkout errors for corporate accounts",
+    "severity": "SEV2",
+    "affected_services": [
+      "customer-portal",
+      "payment-gateway"
+    ],
+    "responders": [
+      "Tanjiro Kamado",
+      "Roronoa Zoro"
+    ],
+    "root_cause_key": "amount_limit",
+    "date": "2026-02-26"
+  },
+  {
+    "id": "INC-2118",
+    "title": "Meter reader fleet disconnects after network change",
+    "severity": "SEV1",
+    "affected_services": [
+      "meter-reader",
+      "telemetry-ingest"
+    ],
+    "responders": [
+      "Winry Rockbell",
+      "Yor Forger",
+      "Loid Forger"
+    ],
+    "root_cause_key": "mtu",
+    "date": "2026-03-13"
+  },
+  {
+    "id": "INC-2119",
+    "title": "Duplicate outage push notifications",
+    "severity": "SEV3",
+    "affected_services": [
+      "outage-notifier"
+    ],
+    "responders": [
+      "Usopp",
+      "Asuka Langley"
+    ],
+    "root_cause_key": "retry_dedup",
+    "date": "2026-03-28"
+  },
+  {
+    "id": "INC-2120",
+    "title": "Billing engine OOM during quarterly reconciliation",
+    "severity": "SEV1",
+    "affected_services": [
+      "billing-engine",
+      "reporting-service"
+    ],
+    "responders": [
+      "Light Yagami",
+      "Olivier Armstrong",
+      "Kakashi Hatake"
+    ],
+    "root_cause_key": "memory",
+    "date": "2026-04-12"
+  }
+]
