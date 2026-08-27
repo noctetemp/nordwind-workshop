@@ -29,12 +29,9 @@
           background: repeating-linear-gradient(0deg, rgba(120,200,255,.25) 0 1px, transparent 1px 4px); }
 </style>
 <script type="importmap">{ "imports": {
-  "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
-  "three/webgpu": "https://unpkg.com/three@0.169.0/build/three.webgpu.js",
-  "three/tsl": "https://unpkg.com/three@0.169.0/build/three.tsl.js",
-  "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/",
-  "three/examples/jsm/": "https://unpkg.com/three@0.169.0/examples/jsm/",
-  "3d-force-graph": "https://unpkg.com/3d-force-graph@1.77.0/dist/3d-force-graph.mjs"
+  "three": "https://esm.sh/three@0.169.0",
+  "three/webgpu": "https://esm.sh/three@0.169.0/webgpu",
+  "three/tsl": "https://esm.sh/three@0.169.0/tsl"
 } }</script>
 </head>
 <body>
@@ -57,9 +54,9 @@
 </div>
 
 <script type="module">
-import ForceGraph3D from '3d-force-graph';
+import ForceGraph3D from 'https://esm.sh/3d-force-graph@1.77.0?external=three';
 import * as THREE from 'three';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { UnrealBloomPass } from 'https://esm.sh/three@0.169.0/examples/jsm/postprocessing/UnrealBloomPass.js?external=three';
 
 const BASE = 'https://raw.githubusercontent.com/noctetemp/nordwind-workshop/main/dataset/';
 const j = p => fetch(BASE + p).then(r => { if (!r.ok) throw new Error(p + ': ' + r.status); return r.json(); });
