@@ -14,6 +14,13 @@ morale, entirely by anime characters).
 | 3 | **Graph Databases** — Cypher, Neo4j, and seeing your knowledge as a network · **[⚠️ Aura setup first](AURA_SETUP.md)** | [![EN](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session3_graphs_en.ipynb) |
 | 4 | **GraphRAG** — vectors + graphs, full circle | _coming soon_ |
 
+## 🛰️ Bonus: the NordWind Hologram
+
+The entire company as a sci-fi 3D graph — bloom glow, starfield, data pulses on the
+edges, and a **⚡ TRACE** button that lights the workshop's hard question in gold:
+**[open the hologram](https://raw.githack.com/noctetemp/nordwind-workshop/main/nordwind_3d.html)**
+(or download [`nordwind_3d.html`](nordwind_3d.html) and double-click it — fully self-contained).
+
 ## Setup for participants
 
 1. Open the session notebook via its Colab badge above.
