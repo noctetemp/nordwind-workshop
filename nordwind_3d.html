@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NORDWIND // KNOWLEDGE GRAPH</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000005; overflow: hidden;
+               font-family: "Courier New", ui-monospace, monospace; }
+  #graph { width: 100vw; height: 100vh; }
+  .hud { position: absolute; z-index: 10; color: #7dd3fc; pointer-events: none;
+         text-shadow: 0 0 8px rgba(56,189,248,.8); }
+  #title { top: 22px; left: 26px; }
+  #title h1 { margin: 0; font-size: 20px; letter-spacing: 6px; color: #e0f2fe; }
+  #title p  { margin: 4px 0 0 0; font-size: 11px; letter-spacing: 3px; opacity: .75; }
+  #legend { bottom: 22px; left: 26px; font-size: 11px; letter-spacing: 2px; line-height: 1.9; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px;
+         box-shadow: 0 0 8px currentColor; }
+  #hint { bottom: 22px; right: 26px; font-size: 10px; letter-spacing: 2px; opacity: .55; text-align: right; }
+  #controls { position: absolute; top: 22px; right: 26px; z-index: 20; display: flex; gap: 10px; }
+  .btn { font-family: inherit; font-size: 11px; letter-spacing: 2px; padding: 9px 14px; cursor: pointer;
+         color: #7dd3fc; background: rgba(8,20,35,.65); border: 1px solid rgba(56,189,248,.5);
+         border-radius: 3px; text-shadow: 0 0 6px rgba(56,189,248,.9);
+         box-shadow: 0 0 12px rgba(56,189,248,.25), inset 0 0 12px rgba(56,189,248,.08); }
+  .btn:hover { background: rgba(14,40,66,.85); }
+  .btn.active { color: #fde68a; border-color: rgba(251,191,36,.8);
+                text-shadow: 0 0 8px rgba(251,191,36,1);
+                box-shadow: 0 0 16px rgba(251,191,36,.4), inset 0 0 12px rgba(251,191,36,.1); }
+  #scan { position: absolute; inset: 0; z-index: 5; pointer-events: none; mix-blend-mode: overlay; opacity: .16;
+          background: repeating-linear-gradient(0deg, rgba(120,200,255,.25) 0 1px, transparent 1px 4px); }
+</style>
+<script type="importmap">{ "imports": {
+  "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
+  "three/webgpu": "https://unpkg.com/three@0.169.0/build/three.webgpu.js",
+  "three/tsl": "https://unpkg.com/three@0.169.0/build/three.tsl.js",
+  "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/",
+  "3d-force-graph": "https://unpkg.com/3d-force-graph@1.77.0/dist/3d-force-graph.mjs"
+} }</script>
+</head>
+<body>
+<div id="graph"></div>
+<div id="scan"></div>
+<div class="hud" id="title">
+  <h1>NORDWIND ⟁ KNOWLEDGE GRAPH</h1>
+  <p>73 ENTITIES · 153 TYPED RELATIONS · LIVE STRUCTURAL FEED</p>
+</div>
+<div class="hud" id="legend">
+  <span class="dot" style="color:#ffb020; background:#ffb020"></span>TEAM&nbsp;&nbsp;
+  <span class="dot" style="color:#00d4ff; background:#00d4ff"></span>ENGINEER&nbsp;&nbsp;
+  <span class="dot" style="color:#00ff9d; background:#00ff9d"></span>SERVICE&nbsp;&nbsp;
+  <span class="dot" style="color:#ff2d55; background:#ff2d55"></span>INCIDENT
+</div>
+<div class="hud" id="hint">DRAG ROTATE · SCROLL ZOOM · CLICK NODE = FOCUS</div>
+<div id="controls">
+  <button class="btn" id="orbitBtn">◉ AUTO-ORBIT</button>
+  <button class="btn" id="traceBtn">⚡ TRACE: PAYMENT-GATEWAY IMPACT</button>
+</div>
+
+<script type="module">
+import ForceGraph3D from '3d-force-graph';
+import * as THREE from 'three';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+const BASE = 'https://raw.githubusercontent.com/noctetemp/nordwind-workshop/main/dataset/';
+const j = p => fetch(BASE + p).then(r => { if (!r.ok) throw new Error(p + ': ' + r.status); return r.json(); });
+const [teams, engineers, services, incidents, rels] = await Promise.all([
+  j('entities/teams.json'), j('entities/engineers.json'), j('entities/services.json'),
+  j('entities/incidents.json'), j('relationships.json')]);
+
+// golden path: the workshop's hard question, computed live
+const dependents = new Set(rels.filter(r => r.type === 'DEPENDS_ON' && r.to === 'payment-gateway').map(r => r.from));
+const qualIncs   = new Set(rels.filter(r => r.type === 'AFFECTED' && dependents.has(r.to)).map(r => r.from));
+const answerEngs = new Set(rels.filter(r => r.type === 'RESPONDED_TO' && qualIncs.has(r.to)).map(r => r.from));
+const litSet = new Set([...answerEngs, ...qualIncs, ...dependents, 'payment-gateway']);
+const onPath = r =>
+  (r.type === 'RESPONDED_TO' && answerEngs.has(r.from) && qualIncs.has(r.to)) ||
+  (r.type === 'AFFECTED'     && qualIncs.has(r.from)   && dependents.has(r.to)) ||
+  (r.type === 'DEPENDS_ON'   && dependents.has(r.from) && r.to === 'payment-gateway');
+
+const data = {
+  nodes: [
+    ...teams.map(t => ({ id: t.name, group: 'Team', sub: t.focus, val: 14, lit: litSet.has(t.name) })),
+    ...engineers.map(e => ({ id: e.name, group: 'Engineer', sub: `${e.role} · ${e.team_name}`, val: 4, lit: litSet.has(e.name) })),
+    ...services.map(s => ({ id: s.name, group: 'Service', sub: s.description, val: 8, lit: litSet.has(s.name) })),
+    ...incidents.map(i => ({ id: i.id, group: 'Incident', sub: `${i.severity} · ${i.title}`, val: 6, lit: litSet.has(i.id) })),
+  ],
+  links: rels.map(r => ({ source: r.from, target: r.to, type: r.type, gold: onPath(r) })),
+};
+console.log(`NordWind loaded: ${data.nodes.length} nodes, ${data.links.length} links, ` +
+            `${data.links.filter(l => l.gold).length} golden edges, ${[...litSet].length} lit nodes`);
+
+const COLORS = { Team: '#ffb020', Engineer: '#00d4ff', Service: '#00ff9d', Incident: '#ff2d55' };
+const LINK_COLORS = { MEMBER_OF: '#2a4a66', OWNS: '#8a6a1a', DEPENDS_ON: '#0e7a55',
+                      AFFECTED: '#7a1e30', RESPONDED_TO: '#1e4a7a' };
+let trace = false;
+
+const Graph = new ForceGraph3D(document.getElementById('graph'))
+  .graphData(data)
+  .backgroundColor('#000005')
+  .showNavInfo(false)
+  .nodeLabel(n => `<div style="font-family:monospace; background:rgba(2,10,20,.9); border:1px solid ${COLORS[n.group]};
+       padding:7px 10px; border-radius:3px; color:#e2f4ff; box-shadow:0 0 14px ${COLORS[n.group]}55">
+       <b style="color:${COLORS[n.group]}">${n.id}</b><br><span style="opacity:.75; font-size:11px">${n.sub}</span></div>`)
+  .nodeColor(n => trace ? (n.lit ? COLORS[n.group] : '#16202c') : COLORS[n.group])
+  .nodeVal(n => trace && n.lit ? n.val * 2.2 : n.val)
+  .nodeOpacity(0.92)
+  .nodeResolution(16)
+  .linkColor(l => trace ? (l.gold ? '#ffd54a' : '#0b1220') : LINK_COLORS[l.type])
+  .linkWidth(l => trace && l.gold ? 2.4 : 0.6)
+  .linkOpacity(0.55)
+  .linkDirectionalParticles(l => trace ? (l.gold ? 5 : 0)
+                                       : (l.type === 'DEPENDS_ON' || l.type === 'AFFECTED' ? 2 : 0))
+  .linkDirectionalParticleWidth(l => trace && l.gold ? 2.6 : 1.4)
+  .linkDirectionalParticleSpeed(0.006)
+  .linkDirectionalParticleColor(l => trace && l.gold ? '#ffe27a'
+                                       : (l.type === 'AFFECTED' ? '#ff5d7a' : '#3dffb0'))
+  .onNodeClick(node => {
+    const dist = 130, ratio = 1 + dist / Math.hypot(node.x, node.y, node.z);
+    Graph.cameraPosition({ x: node.x * ratio, y: node.y * ratio, z: node.z * ratio }, node, 1400);
+  });
+
+// ambience: bloom = the hologram glow
+try {
+  const bloom = new UnrealBloomPass();
+  bloom.strength = 1.6; bloom.radius = 0.7; bloom.threshold = 0.0;
+  Graph.postProcessingComposer().addPass(bloom);
+} catch (e) { console.warn('bloom unavailable, continuing without post-processing:', e); }
+
+// ambience: starfield
+const starGeo = new THREE.BufferGeometry();
+const starPos = new Float32Array(2400 * 3);
+for (let i = 0; i < starPos.length; i++) starPos[i] = (Math.random() - 0.5) * 4200;
+starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+Graph.scene().add(new THREE.Points(starGeo,
+  new THREE.PointsMaterial({ color: '#5b7fa6', size: 1.1, transparent: true, opacity: 0.55 })));
+
+// spread the layout a bit for drama
+Graph.d3Force('charge').strength(-160);
+
+// controls
+const controls = Graph.controls();
+controls.autoRotateSpeed = 0.55;
+document.getElementById('orbitBtn').onclick = function () {
+  controls.autoRotate = !controls.autoRotate;
+  this.classList.toggle('active', controls.autoRotate);
+};
+document.getElementById('traceBtn').onclick = function () {
+  trace = !trace;
+  this.classList.toggle('active', trace);
+  // re-set accessors to force re-evaluation with the new mode
+  Graph.nodeColor(Graph.nodeColor()); Graph.nodeVal(Graph.nodeVal());
+  Graph.linkColor(Graph.linkColor()); Graph.linkWidth(Graph.linkWidth());
+  Graph.linkDirectionalParticles(Graph.linkDirectionalParticles());
+  Graph.linkDirectionalParticleWidth(Graph.linkDirectionalParticleWidth());
+  Graph.linkDirectionalParticleColor(Graph.linkDirectionalParticleColor());
+};
+
+// opening shot: slow pull-back, orbit on
+Graph.cameraPosition({ x: 0, y: 0, z: 380 });
+setTimeout(() => { controls.autoRotate = true;
+                   document.getElementById('orbitBtn').classList.add('active'); }, 800);
+</script>
+</body>
+</html>
