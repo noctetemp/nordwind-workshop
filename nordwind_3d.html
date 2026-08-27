@@ -121,7 +121,7 @@ const Graph = new ForceGraph3D(document.getElementById('graph'))
 // ambience: bloom = the hologram glow
 try {
   const bloom = new UnrealBloomPass();
-  bloom.strength = 1.6; bloom.radius = 0.7; bloom.threshold = 0.0;
+  bloom.strength = 1.05; bloom.radius = 0.45; bloom.threshold = 0.0;
   Graph.postProcessingComposer().addPass(bloom);
 } catch (e) { console.warn('bloom unavailable, continuing without post-processing:', e); }
 
@@ -134,7 +134,7 @@ Graph.scene().add(new THREE.Points(starGeo,
   new THREE.PointsMaterial({ color: '#5b7fa6', size: 1.1, transparent: true, opacity: 0.55 })));
 
 // spread the layout a bit for drama
-Graph.d3Force('charge').strength(-160);
+Graph.d3Force('charge').strength(-260);
 
 // controls
 const controls = Graph.controls();
