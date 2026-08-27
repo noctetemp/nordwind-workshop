@@ -89,7 +89,7 @@ console.log(`NordWind loaded: ${data.nodes.length} nodes, ${data.links.length} l
             `${data.links.filter(l => l.gold).length} golden edges, ${[...litSet].length} lit nodes`);
 
 const COLORS = { Team: '#ffb020', Engineer: '#00d4ff', Service: '#00ff9d', Incident: '#ff2d55' };
-const LINK_COLORS = { MEMBER_OF: '#2a4a66', OWNS: '#8a6a1a', DEPENDS_ON: '#0e7a55',
+const LINK_COLORS = { MEMBER_OF: '#2a4a66', OWNS: '#5e4a15', DEPENDS_ON: '#0e7a55',
                       AFFECTED: '#7a1e30', RESPONDED_TO: '#1e4a7a' };
 let trace = false;
 
@@ -124,6 +124,9 @@ try {
   bloom.strength = 1.05; bloom.radius = 0.45; bloom.threshold = 0.0;
   Graph.postProcessingComposer().addPass(bloom);
 } catch (e) { console.warn('bloom unavailable, continuing without post-processing:', e); }
+
+// hologram lighting: flood with ambient so nodes glow evenly, no dark sides
+Graph.scene().add(new THREE.AmbientLight(0xffffff, 2.4));
 
 // ambience: starfield
 const starGeo = new THREE.BufferGeometry();
