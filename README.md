@@ -11,7 +11,7 @@ morale, entirely by anime characters).
 |---|---------|----------|
 | 1 | **RAG Foundations** — tokens, context windows, naive RAG, and the question that breaks it | [![EN](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session1_rag_foundations_en.ipynb) [🇯🇵 日本語版](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session1_rag_foundations_ja.ipynb) |
 | 2 | **Embeddings & Vector Databases** — the geometry of meaning | [![EN](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session2_vectors_en.ipynb) [🇯🇵 日本語版](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session2_vectors_ja.ipynb) |
-| 3 | **Graph Databases** — Cypher, Neo4j, and seeing your knowledge as a network · **[⚠️ Aura setup first](AURA_SETUP.md)** | [![EN](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session3_graphs_en.ipynb) |
+| 3 | **Graph Databases** — Cypher, Neo4j, the Graph Navigator, and the RAG autopsy · **[⚠️ Aura setup first](AURA_SETUP.md)** | [![EN](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session3_graphs_en.ipynb) [🇯🇵 日本語版](https://colab.research.google.com/github/noctetemp/nordwind-workshop/blob/main/session3_graphs_ja.ipynb) |
 | 4 | **GraphRAG** — vectors + graphs, full circle | _coming soon_ |
 
 ## 🛰️ The Graph Navigator — sci-fi navigation of a LIVE Neo4j
@@ -27,6 +27,8 @@ and navigate the graph like a ship's computer:
 - **⚡ TRACE IMPACT** → runs the workshop's hard question as a real path query and lights every
   evidence path in gold
 - No database handy? **SNAPSHOT MODE** loads a static copy so the visuals still work.
+
+How it works and how it was tested: [`GRAPH_NAVIGATOR.md`](GRAPH_NAVIGATOR.md).
 
 ## Setup for participants
 
