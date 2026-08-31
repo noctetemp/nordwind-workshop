@@ -1,6 +1,6 @@
 # 🔌 Neo4j Aura Setup — do this BEFORE Session 3 (takes ~3 minutes)
 
-Session 3 uses **Neo4j Aura Free** — a free, cloud-hosted Neo4j instance. No credit card, no installation, no Docker. You need exactly three things at the start of the session: a **URI**, the username **neo4j**, and a **password**. This guide gets you all three.
+Session 3 uses **Neo4j Aura Free** — a free, cloud-hosted Neo4j instance. No credit card, no installation, no Docker. You need exactly three things at the start of the session: a **URI**, a **username**, and a **password**. This guide gets you all three.
 
 ## Steps
 
@@ -18,10 +18,12 @@ Session 3 uses **Neo4j Aura Free** — a free, cloud-hosted Neo4j instance. No c
 5. **Verify** — open the credentials `.txt`. You should see something like:
    ```
    NEO4J_URI=neo4j+s://a1b2c3d4.databases.neo4j.io
-   NEO4J_USERNAME=neo4j
+   NEO4J_USERNAME=a1b2c3d4
    NEO4J_PASSWORD=xxxxxxxxxxxxxxxxxxxx
    ```
-   That URI + password is what you'll paste into the Session 3 notebook. Done. ✅
+   Those three values (URI, **username**, password) are what you'll paste into the Session 3 notebook and the Graph Navigator. Done. ✅
+
+   > ⚠️ **The username is NOT `neo4j` on current Aura instances** — it's the instance id (the same 8 characters as in the URI). Copy it from the file. Using `neo4j` fails with "Invalid credential" even when the password is right.
 
 ## Good to know
 
@@ -33,6 +35,6 @@ Session 3 uses **Neo4j Aura Free** — a free, cloud-hosted Neo4j instance. No c
 ## Troubleshooting
 
 - *"Connection refused / ServiceUnavailable" in the notebook* → instance is paused (Resume it) or the URI was mistyped — it must start with `neo4j+s://`.
-- *"Authentication failure"* → password typo; reset it via the instance ••• menu → "Reset password", download the new file.
+- *"Authentication failure" / "Invalid credential"* → **first check the username**: it must be the `NEO4J_USERNAME` from your file (the instance id), not `neo4j`. If that's right, it's a password typo; reset it via the instance ••• menu → "Reset password", download the new file.
 - *Corporate network blocks it* → Aura uses port 7687 (bolt over TLS); try a hotspot if your office firewall is aggressive.
 - *No account possible at all* → come anyway: the visual half of the session needs no database, and you can pair with a neighbor for the query cells.
