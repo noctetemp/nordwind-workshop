@@ -89,7 +89,9 @@
   <p>CONNECT TO A LIVE NEO4J INSTANCE — EVERY NODE YOU SEE WILL COME FROM CYPHER</p>
   <label>BOLT URI</label>
   <input id="uri" placeholder="neo4j+s://xxxxxxxx.databases.neo4j.io" spellcheck="false">
-  <label>PASSWORD (user: neo4j)</label>
+  <label>USERNAME — NEO4J_USERNAME from your credentials file (instance id on new Aura, e.g. 5b75437f)</label>
+  <input id="user" placeholder="5b75437f   (older instances: neo4j)" spellcheck="false">
+  <label>PASSWORD</label>
   <input id="pw" type="password" spellcheck="false">
   <div class="row">
     <button class="btn" id="connectBtn">CONNECT</button>
@@ -267,15 +269,16 @@ async function expandNode(node) {
 /* ---------- uplink ---------- */
 $('connectBtn').onclick = async () => {
   const uri = $('uri').value.trim(), pw = $('pw').value;
+  const user = $('user').value.trim() || uri.replace(/^neo4j\+s?:\/\//,'').split('.')[0] || 'neo4j';
   $('upmsg').textContent = 'HANDSHAKING…'; $('upmsg').style.color = '#7dd3fc';
   try {
-    driver = neo4j.driver(uri, neo4j.auth.basic('neo4j', pw));
+    driver = neo4j.driver(uri, neo4j.auth.basic(user, pw));
     await driver.verifyConnectivity();
     dbSession = driver.session();
     snapshotMode = false;
     $('uplink').style.display = 'none';
     $('cypher').disabled = false;
-    setStatus('UPLINK: LIVE · ' + uri.replace(/^neo4j\+s?:\/\//,''));
+    setStatus('UPLINK: LIVE · ' + user + '@' + uri.replace(/^neo4j\+s?:\/\//,''));
     log('⟁ UPLINK ESTABLISHED — every node from here on is a database record', 'sys');
     const res = await runCypher("MATCH (s:Service {name:'payment-gateway'}) RETURN s");
     if (res && res.records.length === 0) {
